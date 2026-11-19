@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf1d6"/>
+      <stop offset="45%" stop-color="#cfa859"/>
+      <stop offset="75%" stop-color="#b88f3c"/>
+      <stop offset="100%" stop-color="#8a6723"/>
+    </linearGradient>
+    <linearGradient id="burgundyGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8a1c33"/>
+      <stop offset="50%" stop-color="#6b1426"/>
+      <stop offset="100%" stop-color="#4a0b17"/>
+    </linearGradient>
+    <filter id="shadowW" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#4a0b17" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Circle -->
+  <g filter="url(#shadowW)">
+    <circle cx="200" cy="200" r="175" fill="url(#burgundyGradW)" stroke="url(#goldGradW)" stroke-width="6"/>
+    <circle cx="200" cy="200" r="162" fill="none" stroke="url(#goldGradW)" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <circle cx="200" cy="200" r="154" fill="none" stroke="url(#goldGradW)" stroke-width="1"/>
+  </g>
+
+  <!-- Lens Aperture Blades Accent on Top -->
+  <g transform="translate(160, 65) scale(0.8)" fill="none" stroke="url(#goldGradW)" stroke-width="3">
+    <circle cx="50" cy="50" r="35"/>
+    <line x1="50" y1="15" x2="75" y2="35"/>
+    <line x1="85" y1="50" x2="65" y2="75"/>
+    <line x1="50" y1="85" x2="25" y2="65"/>
+    <line x1="15" y1="50" x2="35" y2="25"/>
+    <circle cx="50" cy="50" r="12" fill="url(#goldGradW)"/>
+  </g>
+
+  <!-- WoW Letters in Center -->
+  <!-- Left W -->
+  <text x="120" y="235" font-family="'Playfair Display', Georgia, serif" font-size="88" font-weight="900" fill="url(#goldGradW)" text-anchor="middle">W</text>
+  
+  <!-- Center O as Camera Lens Aperture Ring -->
+  <circle cx="200" cy="205" r="32" fill="none" stroke="url(#goldGradW)" stroke-width="7"/>
+  <circle cx="200" cy="205" r="18" fill="url(#goldGradW)"/>
+  <circle cx="200" cy="205" r="8" fill="#4a0b17"/>
+
+  <!-- Right W -->
+  <text x="280" y="235" font-family="'Playfair Display', Georgia, serif" font-size="88" font-weight="900" fill="url(#goldGradW)" text-anchor="middle">W</text>
+
+  <!-- STUDIO Subtitle -->
+  <circle cx="125" cy="285" r="3" fill="url(#goldGradW)"/>
+  <circle cx="140" cy="285" r="4" fill="url(#goldGradW)"/>
+  <text x="200" y="292" font-family="'Poppins', sans-serif" font-size="20" font-weight="800" letter-spacing="6" fill="#ffffff" text-anchor="middle">STUDIO</text>
+  <circle cx="260" cy="285" r="4" fill="url(#goldGradW)"/>
+  <circle cx="275" cy="285" r="3" fill="url(#goldGradW)"/>
+
+  <text x="200" y="320" font-family="'Playfair Display', Georgia, serif" font-size="11.5" letter-spacing="3" fill="url(#goldGradW)" text-anchor="middle">PHOTOGRAPHY &amp; CINEMA</text>
+</svg>

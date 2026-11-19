@@ -1,0 +1,635 @@
+/**
+ * ============================================================================
+ * HOSPITAL ERP — PUBLIC WEBSITE: BOOK A DEMO STYLES (STITCH DESIGN SPEC)
+ * Path: front/assets/css/demo.css
+ * ============================================================================
+ */
+
+.demo-screen-wrap {
+    padding: 48px 0 80px;
+    background: #f8fbfd;
+}
+
+.demo-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .demo-layout-grid {
+        grid-template-columns: 5fr 7fr;
+        gap: 36px;
+    }
+}
+
+/* Left Column Cards */
+.demo-card-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.demo-card-box:hover {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.demo-brand-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.demo-brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.demo-brand-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #ff6a00;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(255, 106, 0, 0.25);
+}
+
+.demo-brand-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.demo-brand-sub {
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.demo-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e6f6f4;
+    color: #0b6b5e;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.demo-val-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin: 0 0 10px;
+    letter-spacing: -0.4px;
+}
+
+.demo-val-desc {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+.demo-metric-alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f1f8f7;
+    border: 1px solid #cce8e3;
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.demo-metric-alert .pulse-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff6a00;
+    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.demo-metric-alert p {
+    margin: 0;
+    font-size: 12.5px;
+    color: #475569;
+    line-height: 1.45;
+}
+
+/* Command Center Visual Preview */
+.demo-preview-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 175px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+}
+
+.demo-preview-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.demo-preview-card:hover img {
+    transform: scale(1.04);
+}
+
+.demo-preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 39, 92, 0.9) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 14px 18px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    gap: 8px;
+}
+
+/* 4 Bento Scale Stat Cards */
+.demo-bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.demo-bento-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.demo-bento-card:hover {
+    transform: translateY(-2px);
+    border-color: #ff6a00;
+}
+
+.demo-bento-card i {
+    font-size: 18px;
+    color: #ff6a00;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.demo-bento-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+}
+
+.demo-bento-lbl {
+    font-size: 11.5px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* Doctor Testimonial Card */
+.demo-quote-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.demo-quote-stars {
+    color: #f59e0b;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.demo-quote-text {
+    font-size: 13px;
+    font-style: italic;
+    color: #334155;
+    line-height: 1.6;
+    margin: 0 0 14px;
+}
+
+.demo-quote-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.demo-quote-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff6a00;
+}
+
+.demo-quote-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.demo-quote-role {
+    font-size: 11.5px;
+    color: #64748b;
+}
+
+/* Advisory Desk Card */
+.demo-desk-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.demo-desk-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.demo-desk-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.demo-desk-row:last-child {
+    margin-bottom: 0;
+}
+
+.demo-desk-row i {
+    color: #ff6a00;
+    width: 16px;
+    text-align: center;
+}
+
+/* Right Column: Form Container */
+.demo-form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 600px) {
+    .demo-form-card {
+        padding: 36px 36px;
+    }
+}
+
+.demo-form-head {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+}
+
+.demo-form-kicker {
+    font-size: 11.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #ff6a00;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.demo-form-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px;
+    letter-spacing: -0.3px;
+}
+
+.demo-form-sub {
+    font-size: 13.5px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Form Steps */
+.demo-form-step {
+    margin-bottom: 26px;
+}
+
+.demo-step-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.demo-step-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e6f6f4;
+    color: #ff6a00;
+    font-size: 12px;
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+}
+
+.demo-step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.demo-field-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+@media (min-width: 576px) {
+    .demo-field-grid.two-col {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.demo-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.demo-form-group label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.demo-form-group input,
+.demo-form-group select {
+    height: 46px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 0 14px;
+    font-size: 14px;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.2s ease;
+    width: 100%;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.demo-form-group input:focus,
+.demo-form-group select:focus {
+    background: #ffffff;
+    border-color: #ff6a00;
+    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.15);
+}
+
+/* Interactive Bed Size Radio Pill Grid */
+.demo-bed-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 6px;
+}
+
+@media (min-width: 576px) {
+    .demo-bed-selector {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.demo-bed-opt {
+    position: relative;
+    cursor: pointer;
+}
+
+.demo-bed-opt input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.demo-bed-box {
+    padding: 10px 8px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.demo-bed-box strong {
+    display: block;
+    font-size: 14px;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.demo-bed-box span {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.demo-bed-opt input[type="radio"]:checked + .demo-bed-box {
+    background: #e6f6f4;
+    border-color: #ff6a00;
+    box-shadow: 0 4px 12px rgba(255, 106, 0, 0.15);
+}
+
+.demo-bed-opt input[type="radio"]:checked + .demo-bed-box strong {
+    color: #0b6b5e;
+}
+
+.demo-bed-opt input[type="radio"]:checked + .demo-bed-box span {
+    color: #ff6a00;
+    font-weight: 600;
+}
+
+/* Delivery Mode Switcher */
+.demo-mode-bar {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.demo-mode-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.demo-mode-info i {
+    font-size: 18px;
+    color: #ff6a00;
+}
+
+.demo-mode-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.demo-mode-sub {
+    font-size: 11.5px;
+    color: #64748b;
+}
+
+.demo-mode-switch {
+    display: flex;
+    background: #e2e8f0;
+    padding: 3px;
+    border-radius: 8px;
+    gap: 4px;
+}
+
+.demo-mode-btn {
+    border: none;
+    background: transparent;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.demo-mode-btn.active {
+    background: #ff6a00;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(255, 106, 0, 0.25);
+}
+
+/* Form Submit & Reassurance */
+.demo-btn-submit {
+    height: 50px;
+    border-radius: 10px;
+    background: #ff6a00;
+    color: #ffffff;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    box-shadow: 0 6px 18px rgba(255, 106, 0, 0.25);
+    transition: all 0.2s ease;
+}
+
+.demo-btn-submit:hover {
+    background: #097566;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255, 106, 0, 0.35);
+}
+
+.demo-reassurance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.demo-reassurance i {
+    color: #ff6a00;
+}
+
+/* Success Alert Banner */
+.demo-success-alert {
+    background: #e6f6f4;
+    border: 1px solid #99dcd2;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.demo-success-alert[hidden] {
+    display: none !important;
+}
+
+.demo-success-icon {
+    font-size: 24px;
+    color: #ff6a00;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.demo-success-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #06404d;
+    margin: 0 0 4px;
+}
+
+.demo-success-desc {
+    font-size: 13px;
+    color: #0b6b5e;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.demo-ref-badge {
+    display: inline-block;
+    background: #06404d;
+    color: #ff6a00;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+    font-family: monospace;
+}

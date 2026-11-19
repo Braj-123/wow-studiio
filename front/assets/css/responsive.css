@@ -1,0 +1,177 @@
+@media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.hero{background:#f7f6f0}.hero-copy{max-width:760px}.product-stage{max-width:760px}.split{gap:55px}.proof-list{flex-wrap:wrap}.nav-wrap{gap:20px}.primary-nav{gap:16px}}@media(max-width:768px){.container{width:min(100% - 32px,var(--container))}.nav-wrap{height:68px}.nav-toggle{display:block;margin-left:auto}.nav-toggle i{display:block;width:22px;height:2px;background:var(--ink);margin:5px}.primary-nav{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:22px 16px;border-bottom:1px solid var(--line);flex-direction:column}.primary-nav.open{display:flex}.nav-actions .text-link{display:none}.nav-actions .button{min-height:38px;padding-inline:12px}.hero{padding:58px 0}.hero h1{font-size:43px}.dashboard{min-height:370px;grid-template-columns:46px 1fr}.dash-main{padding:16px}.metric-row{grid-template-columns:repeat(3,minmax(95px,1fr));overflow:auto}.dash-content{grid-template-columns:1fr}.queue-card{display:none}.status-card{right:10px}.proof-strip .container,.section-heading{align-items:flex-start;flex-direction:column;gap:12px}.proof-list{justify-content:flex-start}.section{padding:78px 0}.split,.security-grid{grid-template-columns:1fr;gap:55px}.workflow{min-height:430px}.demo-box{padding:42px 28px;align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}@media(max-width:480px){.nav-actions{display:none}.hero h1{font-size:38px;letter-spacing:-1.8px}.hero-lead{font-size:17px}.hero-actions{flex-direction:column}.button{width:100%}.trust-row{gap:16px}.dashboard{transform:none;margin-inline:-8px}.dash-side{display:none}.dashboard{grid-template-columns:1fr}.metric-row>div{padding:10px}.metric-row b{font-size:20px}.proof-list{display:grid;grid-template-columns:1fr 1fr}.section h2{letter-spacing:-1.8px}.workflow:before{inset:35px 70px}.flow-item{min-width:145px;padding:10px}.flow-b{right:-5px}.flow-d{left:-5px}.security-points p{grid-template-columns:1fr;gap:5px}.module-list article{grid-template-columns:38px 1fr}.module-list article>i{display:none}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.footer-bottom{flex-direction:column;gap:8px}}
+
+
+/* ==========================================================================
+   HERO SLIDER RESPONSIVE RULES (ZERO CROPPING ON 14.5" LAPTOP & MOBILE)
+   ========================================================================== */
+html, body {
+    overflow-x: clip;
+}
+
+.hero-multi.hero-full-slider-section.is-custom-image-mode {
+    aspect-ratio: var(--hero-custom-aspect, 1920 / 600) !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: 600px !important;
+}
+
+.hero-full-slide-img.hero-custom-only-img {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: transparent !important;
+}
+
+@media (max-width: 767.98px) {
+    .hero-multi.hero-full-slider-section.is-custom-image-mode {
+        aspect-ratio: var(--hero-custom-aspect, 1920 / 600) !important;
+        height: auto !important;
+        min-height: unset !important;
+        max-height: none !important;
+        padding: 0 !important;
+    }
+    .feature-section {
+        margin-top: 15px !important;
+        padding-bottom: 30px !important;
+    }
+}
+
+/* Place Hero strictly AFTER Navbar on Home Page (Zero touch/overlap into header) */
+body.is-home-page .site-header:not(.scrolled),
+body:has(#main-content[data-module="home"]) .site-header:not(.scrolled),
+[data-module="home"] .site-header:not(.scrolled) {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    border-radius: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 39, 92, 0.08) !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 23, 54, 0.06) !important;
+    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                top 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                margin 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease !important;
+}
+
+body.is-home-page #main-content,
+body.is-home-page .hero-multi.hero-full-slider-section,
+body:has(#main-content[data-module="home"]) #main-content,
+body:has(#main-content[data-module="home"]) .hero-multi.hero-full-slider-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Home Page on Scroll: Floating Navbar */
+body.is-home-page .site-header.scrolled,
+body:has(#main-content[data-module="home"]) .site-header.scrolled {
+    position: sticky !important;
+    top: 14px !important;
+    z-index: 1000 !important;
+    width: 90% !important;
+    max-width: 1540px !important;
+    margin: 0 auto !important;
+    border-radius: 40px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(0, 39, 92, 0.12) !important;
+    box-shadow: 0 16px 40px -8px rgba(0, 39, 92, 0.18), 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Other Pages: Floating navbar even WITHOUT scroll, Hero touches header */
+body.is-other-page .site-header,
+body.is-inner-page .site-header,
+body:not(.is-home-page) .site-header,
+body:has(#main-content:not([data-module="home"])) .site-header {
+    position: sticky !important;
+    top: 14px !important;
+    z-index: 1000 !important;
+    width: 90% !important;
+    max-width: 1540px !important;
+    margin: 14px auto -86px !important;
+    border-radius: 40px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(0, 39, 92, 0.12) !important;
+    box-shadow: 0 16px 40px -8px rgba(0, 39, 92, 0.18), 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+body.is-other-page .site-header .container,
+body.is-inner-page .site-header .container,
+body:not(.is-home-page) .site-header .container,
+body:has(#main-content:not([data-module="home"])) .site-header .container {
+    padding-inline: 28px !important;
+}
+
+@media (max-width: 1080px) {
+    body.is-home-page .site-header:not(.scrolled),
+    body:has(#main-content[data-module="home"]) .site-header:not(.scrolled) {
+        width: 100% !important;
+        top: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    body.is-home-page .site-header.scrolled,
+    body:has(#main-content[data-module="home"]) .site-header.scrolled {
+        width: calc(100% - 24px) !important;
+        top: 10px !important;
+        border-radius: 35px !important;
+        margin: 0 auto !important;
+    }
+    body.is-other-page .site-header,
+    body.is-inner-page .site-header,
+    body:not(.is-home-page) .site-header,
+    body:has(#main-content:not([data-module="home"])) .site-header {
+        width: calc(100% - 24px) !important;
+        top: 10px !important;
+        margin: 10px auto -76px !important;
+        border-radius: 35px !important;
+    }
+    body.is-other-page .site-header .container,
+    body.is-inner-page .site-header .container,
+    body:not(.is-home-page) .site-header .container,
+    body:has(#main-content:not([data-module="home"])) .site-header .container {
+        padding-inline: 18px !important;
+    }
+}
+
+
+/* ==========================================================================
+   30+ MODULES EXPLORER: 4 CARDS PER LINE ON DESKTOP
+   ========================================================================== */
+#modules .modules-grid-3d,
+.modules-grid-3d,
+.modules-card-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+}
+
+@media (max-width: 1100px) {
+    #modules .modules-grid-3d,
+    .modules-grid-3d,
+    .modules-card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 18px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    #modules .modules-grid-3d,
+    .modules-grid-3d,
+    .modules-card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+}

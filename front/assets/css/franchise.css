@@ -1,0 +1,638 @@
+/**
+ * ============================================================================
+ * MPP GROUP — FRANCHISE APPLICATION FORM & CELEBRATION STYLES
+ * High-performance, modern UI/UX design with smooth transitions,
+ * glowing loading spinner, festive celebration confetti & auto-restore.
+ * Path: front/assets/css/franchise.css
+ * ============================================================================
+ */
+
+:root {
+    --mpp-fr-primary: #ff6a00;
+    --mpp-fr-primary-hover: #e55e00;
+    --mpp-fr-primary-glow: rgba(255, 106, 0, 0.25);
+    --mpp-fr-navy: #001736;
+    --mpp-fr-accent: #2563eb;
+    --mpp-fr-success: #10b981;
+    --mpp-fr-success-glow: rgba(16, 185, 129, 0.25);
+    --mpp-fr-card-bg: #ffffff;
+    --mpp-fr-border: #e2e8f0;
+    --mpp-fr-radius: 16px;
+}
+
+/* ----------------------------------------------------------------------------
+   1. MAIN CARD CONTAINER & CANVAS
+   ---------------------------------------------------------------------------- */
+.franchise-form-card {
+    position: relative;
+    background: var(--mpp-fr-card-bg);
+    border-radius: var(--mpp-fr-radius);
+    border: 1px solid var(--mpp-fr-border);
+    box-shadow: 0 20px 45px -10px rgba(0, 23, 54, 0.08), 0 0 0 1px rgba(255, 106, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.franchise-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6a00 0%, #ff9800 40%, #2563eb 80%, #10b981 100%);
+    z-index: 5;
+}
+
+/* Confetti Celebration Canvas Overlay */
+.franchise-celebration-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 25;
+}
+
+/* ----------------------------------------------------------------------------
+   2. FORM VIEW & MODERN INPUTS
+   ---------------------------------------------------------------------------- */
+.franchise-form-view {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.franchise-input-group {
+    position: relative;
+}
+
+.franchise-input-group .input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 15px;
+    pointer-events: none;
+    transition: color 0.2s ease;
+    z-index: 3;
+}
+
+.franchise-form-control {
+    width: 100%;
+    height: 50px;
+    padding: 10px 14px 10px 44px;
+    font-size: 14.5px;
+    font-family: inherit;
+    color: #1e293b;
+    background-color: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.franchise-form-control:focus {
+    outline: none;
+    border-color: var(--mpp-fr-primary);
+    box-shadow: 0 0 0 4px var(--mpp-fr-primary-glow);
+    background-color: #fff;
+}
+
+.franchise-form-control:focus ~ .input-icon {
+    color: var(--mpp-fr-primary);
+}
+
+textarea.franchise-form-control {
+    height: auto;
+    padding-top: 14px;
+}
+
+textarea.franchise-form-control ~ .input-icon {
+    top: 24px;
+}
+
+.franchise-form-label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.franchise-form-label .req {
+    color: #ef4444;
+}
+
+/* Form Submit Button */
+.franchise-submit-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ff6a00 0%, #ff8533 100%);
+    color: #ffffff !important;
+    border: none;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 14px 34px;
+    min-width: 280px;
+    height: 54px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px -4px rgba(255, 106, 0, 0.4);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.franchise-submit-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.franchise-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -4px rgba(255, 106, 0, 0.5);
+}
+
+.franchise-submit-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.franchise-submit-btn:active {
+    transform: translateY(0);
+}
+
+.franchise-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Shake Animation for Validation Error */
+@keyframes franchiseShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+.franchise-field-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+    animation: franchiseShake 0.4s ease;
+}
+
+/* ----------------------------------------------------------------------------
+   3. MODERN LOADING ANIMATION STATE
+   ---------------------------------------------------------------------------- */
+.franchise-loading-state {
+    position: relative;
+    z-index: 10;
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* Multi-Ring Glowing Orbital Loader */
+.franchise-loader-orb {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.franchise-loader-orb::after {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    background: radial-gradient(circle, rgba(255, 106, 0, 0.25) 0%, transparent 70%);
+    filter: blur(10px);
+    border-radius: 50%;
+    animation: franchisePulseAura 2s ease-in-out infinite;
+}
+
+@keyframes franchisePulseAura {
+    0%, 100% { opacity: 0.6; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
+.franchise-loader-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.franchise-loader-ring--outer {
+    border-top-color: #ff6a00;
+    border-right-color: #ff9800;
+    animation: franchiseSpinCW 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.franchise-loader-ring--inner {
+    inset: 12px;
+    border-bottom-color: #2563eb;
+    border-left-color: #06b6d4;
+    animation: franchiseSpinCCW 1.6s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.franchise-loader-core {
+    position: relative;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #001736, #0f274a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff9800;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0, 23, 54, 0.3);
+    animation: franchiseCorePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes franchiseSpinCW {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes franchiseSpinCCW {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes franchiseCorePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.franchise-loading-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #001736;
+    margin-bottom: 8px;
+}
+
+.franchise-loading-ticker {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    color: #475569;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+/* Loading Progress Bar */
+.franchise-progress-track {
+    width: 100%;
+    max-width: 420px;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.franchise-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff6a00 0%, #ff9800 50%, #2563eb 100%);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.franchise-loading-security {
+    font-size: 12.5px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* ----------------------------------------------------------------------------
+   4. CELEBRATION & SUCCESS STATE
+   ---------------------------------------------------------------------------- */
+.franchise-celebration-state {
+    position: relative;
+    z-index: 10;
+    padding: 40px 20px 30px;
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* Top Celebration Pill */
+.franchise-celebration-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(255, 106, 0, 0.12), rgba(245, 158, 11, 0.12));
+    border: 1px solid rgba(255, 106, 0, 0.3);
+    color: #ff6a00;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    animation: franchiseBounceBadge 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes franchiseBounceBadge {
+    0% { transform: scale(0.7); opacity: 0; }
+    60% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Animated SVG Success Checkmark */
+.franchise-success-icon-wrap {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #ecfdf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.25);
+    animation: franchiseCheckPulse 2s ease-in-out infinite;
+}
+
+@keyframes franchiseCheckPulse {
+    0%, 100% { box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25); }
+    50% { box-shadow: 0 14px 40px rgba(16, 185, 129, 0.45); }
+}
+
+.franchise-checkmark-svg {
+    width: 52px;
+    height: 52px;
+}
+
+.franchise-checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2.5;
+    stroke: #10b981;
+    fill: none;
+    animation: strokeCircle 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.franchise-checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    stroke-width: 3.5;
+    stroke: #10b981;
+    fill: none;
+    animation: strokeCheck 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
+}
+
+@keyframes strokeCircle {
+    100% { stroke-dashoffset: 0; }
+}
+
+@keyframes strokeCheck {
+    100% { stroke-dashoffset: 0; }
+}
+
+.franchise-celebration-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #001736;
+    margin-bottom: 8px;
+}
+
+.franchise-celebration-title .client-name {
+    color: #ff6a00;
+}
+
+.franchise-celebration-subtitle {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Bento Summary Card */
+.franchise-summary-bento {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.franchise-summary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    font-size: 13.5px;
+}
+
+.franchise-summary-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.franchise-summary-label {
+    color: #64748b;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.franchise-summary-val {
+    color: #001736;
+    font-weight: 700;
+}
+
+.franchise-ticket-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 13px;
+    color: #2563eb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.franchise-ticket-badge:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+}
+
+/* 5-Second Auto-Restore Countdown Bar & Pill */
+.franchise-countdown-container {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.franchise-countdown-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #475569;
+    font-weight: 600;
+}
+
+.franchise-countdown-num {
+    display: inline-block;
+    min-width: 20px;
+    color: #ff6a00;
+    font-weight: 800;
+}
+
+.franchise-countdown-bar-wrap {
+    width: 100%;
+    height: 6px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.franchise-countdown-bar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #06b6d4, #ff6a00);
+    border-radius: 10px;
+    transform-origin: left;
+    transition: width 0.1s linear;
+}
+
+/* Manual Reset Button */
+.franchise-btn-reset-now {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.franchise-btn-reset-now:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+/* ----------------------------------------------------------------------------
+   5. TRANSITION HELPERS
+   ---------------------------------------------------------------------------- */
+.franchise-fade-out {
+    opacity: 0 !important;
+    transform: translateY(-12px) scale(0.98) !important;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.franchise-fade-in {
+    animation: franchiseSlideFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes franchiseSlideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .franchise-submit-btn {
+        width: 100%;
+        min-width: 100%;
+    }
+    .franchise-celebration-title {
+        font-size: 22px;
+    }
+    .franchise-summary-bento {
+        padding: 14px;
+    }
+}
+
+/* Facilities Selection Grid */
+.franchise-facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.franchise-facility-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #334155;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.franchise-facility-checkbox:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+.franchise-facility-checkbox input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: #ff6a00;
+    cursor: pointer;
+}
+
+.franchise-facility-checkbox:has(input:checked) {
+    background: rgba(255, 106, 0, 0.08);
+    border-color: #ff6a00;
+    color: #001736;
+    font-weight: 600;
+}
+

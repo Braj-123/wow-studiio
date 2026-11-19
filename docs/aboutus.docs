@@ -1,0 +1,135 @@
+# ABOUT US PAGE – ULTRA PREMIUM CINEMATIC DESIGN & ANIMATION PROMPT
+## WoW Studio | Luxury Wedding Photography & Cinematic Films
+
+Redesign and upgrade the complete existing About Us page into an extraordinary, premium cinematic storytelling experience inspired by international luxury wedding photography and film production websites.
+
+The page should communicate the brand's story, vision, creativity, passion, experience, and cinematic excellence through beautiful visuals and sophisticated animations.
+
+### 1. ABOUT HERO SECTION
+- Create an immersive full-screen cinematic hero.
+- Use premium wedding film background footage or existing photography.
+- Add slow cinematic camera zoom and subtle parallax.
+- Animate the "ABOUT WoW STUDIO" heading with split-text reveal.
+- Reveal the subtitle with elegant blur-to-sharp animation.
+- Add a minimal scroll indicator.
+- Use sophisticated dark gradient overlays for readability.
+
+### 2. OUR STORY
+- Create an emotional editorial storytelling layout.
+- Display the brand story alongside a large cinematic photograph.
+- Reveal paragraphs line by line as the user scrolls.
+- Animate images using smooth clipping-mask transitions.
+- Add subtle 3D perspective and camera movement.
+- Highlight important words using elegant typography.
+
+### 3. OUR CREATIVE PHILOSOPHY
+- Create an immersive typography-focused section.
+- Reveal the main statement word by word.
+- Add animated background imagery and subtle parallax.
+- Highlight the brand's creative philosophy with sophisticated typography.
+- Use cinematic transitions between text and visual elements.
+
+### 4. OUR APPROACH / WHAT MAKES US DIFFERENT
+- Create premium feature cards with original layouts.
+- Use cinematic right-to-left card movement.
+- Add 3D depth, staggered reveals, and smooth hover effects.
+- Each card should communicate one brand strength.
+- Avoid ordinary static Bootstrap-style cards.
+
+### 5. OUR EXPERTISE
+Showcase the studio's services using premium visual storytelling:
+- Wedding Photography
+- Cinematic Wedding Films
+- Pre-Wedding Films
+- Destination Weddings
+- Candid Photography
+- Luxury Event Coverage
+
+Use elegant image reveals, subtle zoom, horizontal movement, and interactive hover transitions.
+
+### 6. OUR JOURNEY / MILESTONES
+- Create a sophisticated animated timeline.
+- Reveal milestones progressively during scrolling.
+- Use a moving timeline line.
+- Animate numbers only when genuine data is available.
+- Add elegant image transitions between milestones.
+
+### 7. BEHIND THE LENS / OUR TEAM
+- Create an editorial photography-style team showcase.
+- Use premium portrait layouts.
+- Apply subtle 3D image hover effects.
+- Reveal names and designations elegantly.
+- Use cinematic image transitions.
+
+### 8. OUR MASTER COLLECTION
+- Add a premium portfolio preview.
+- Use asymmetrical editorial image composition.
+- Add cinematic horizontal gallery movement.
+- Use smooth image reveal masks and 3D parallax.
+- Connect to the existing portfolio page.
+
+### 9. CLIENT LOVE
+- Add a premium testimonial showcase.
+- Use floating 3D testimonial cards.
+- Add smooth horizontal carousel movement.
+- Reveal genuine customer reviews and ratings.
+- Include elegant star animations.
+
+### 10. FINAL CINEMATIC CTA
+- Create a full-width cinematic closing section.
+- Use premium wedding film background visuals.
+- Display "LET'S CREATE CINEMA TOGETHER".
+- Add dramatic typography animation.
+- Create an elegant animated contact button.
+- Transition smoothly into the footer.
+
+## ADVANCED ANIMATION TECHNOLOGY
+
+Use:
+- GSAP
+- ScrollTrigger
+- SplitType or equivalent text-splitting solution
+- Lenis only if compatible with the existing scrolling architecture
+- CSS 3D transforms
+- Image clipping and masking
+- Parallax movement
+- Scroll-linked storytelling
+
+## PROFESSIONAL ANIMATION RULES
+- Every section should have its own unique animation style.
+- Do not repeat the same card animation throughout the page.
+- Avoid excessive animation and unnecessary movement.
+- Maintain smooth transitions between sections.
+- Scrolling upward must reverse scroll-linked animations naturally.
+- Include subtle entrance animations even without scrolling.
+- Maintain readability and visual hierarchy.
+
+## RESPONSIVE & PERFORMANCE
+- Fully responsive desktop, tablet, and mobile layouts.
+- Optimize all images and videos.
+- Lazy-load assets.
+- Use GPU-friendly transforms.
+- Avoid layout shifts and flickering.
+- Target smooth 60 FPS where hardware permits.
+- Respect prefers-reduced-motion.
+- Maintain accessibility and SEO-friendly content.
+
+## IMPORTANT DEVELOPMENT INSTRUCTIONS
+1. First analyze the existing About page and project structure.
+2. Inspect existing images, videos, logos, fonts, and brand colors.
+3. Reuse existing assets wherever appropriate.
+4. Preserve genuine company information and existing content.
+5. Do not invent achievements, experience, client counts, awards, or statistics.
+6. Maintain existing navbar, footer, routes, and functionality.
+7. Implement animations directly into the existing About page.
+8. Test all animations on desktop and mobile.
+
+## FINAL EXPECTATION
+
+The final About Us page should look like an award-winning international luxury wedding photography and cinematic film production website.
+
+It must feel emotional, artistic, immersive, sophisticated, and visually unforgettable.
+
+Every section should tell a story through cinematic imagery, elegant typography, premium transitions, and original motion design.
+
+Do not create a separate demo. Implement the complete production-ready About page in the existing project.

@@ -1,0 +1,181 @@
+# OUR PROJECTS PAGE – ULTRA PREMIUM CINEMATIC PORTFOLIO
+## WoW Studio | Luxury Wedding Photography & Cinematic Films
+
+Transform the existing Our Projects page into an extraordinary, visually immersive portfolio experience inspired by world-class luxury wedding photography and film production websites.
+
+The objective is to showcase every project like a cinematic story rather than an ordinary image gallery.
+
+## 1. CINEMATIC PROJECT HERO
+- Create a full-screen cinematic hero section.
+- Use high-quality wedding photography or video from existing project assets.
+- Apply slow camera zoom and subtle parallax.
+- Animate "OUR PROJECTS" using split-text typography.
+- Reveal the subtitle with blur-to-sharp transitions.
+- Add a minimal animated scroll indicator.
+- Use premium cinematic color grading.
+
+## 2. PROJECT CATEGORY FILTER
+Create elegant animated category filters:
+- All Projects
+- Wedding Photography
+- Wedding Films
+- Pre-Wedding
+- Destination Weddings
+- Engagement
+- Luxury Events
+
+Animation requirements:
+- Smooth animated active indicator.
+- Elegant hover transitions.
+- Smooth filtering without sudden layout jumps.
+- Animate newly filtered projects using staggered reveals.
+- Maintain the selected category when navigating through the page.
+
+Use only categories supported by actual project data.
+
+## 3. PREMIUM PROJECT GALLERY
+Create a sophisticated editorial portfolio layout.
+
+Design:
+- Asymmetrical masonry grid.
+- Large cinematic featured project images.
+- Mixed portrait and landscape compositions.
+- Variable image sizes.
+- Premium spacing and alignment.
+- Avoid ordinary repetitive grid layouts.
+
+Animation:
+- Images reveal using cinematic clipping masks.
+- Cards enter from different directions.
+- Smooth right-to-left movement.
+- Staggered image entrances.
+- Subtle 3D perspective and depth.
+- Scroll-based parallax movement.
+- Smooth scale transitions.
+- Cinematic motion blur where appropriate.
+
+## 4. ADVANCED 3D HOVER INTERACTIONS
+When hovering over a project:
+- Apply subtle 3D tilt based on cursor position.
+- Smoothly zoom the project image.
+- Add elegant dark gradient overlays.
+- Reveal project title and category.
+- Animate the View Project arrow.
+- Apply sophisticated lighting and shadow transitions.
+- Restore the original state smoothly when the cursor leaves.
+
+## 5. FEATURED PROJECT STORYTELLING
+Create a premium featured-project experience.
+
+When a project is selected:
+- Open a dedicated project details page or existing project route.
+- Display a large cinematic cover image.
+- Show project title and event details.
+- Create an immersive photography gallery.
+- Support full-screen image viewing.
+- Add smooth image transitions.
+- Include next and previous project navigation.
+- Provide a clear return-to-projects interaction.
+
+Use genuine project information and existing routes.
+
+## 6. HORIZONTAL CINEMATIC GALLERY
+Add a premium horizontal portfolio showcase where appropriate.
+
+- Cards move from right to left.
+- Use scroll-linked animation.
+- Add layered parallax and 3D depth.
+- Create smooth transitions between featured projects.
+- Use subtle scale and rotation.
+- Ensure scrolling backward reverses the movement naturally.
+
+Do not force horizontal scrolling across the entire page.
+
+## 7. PROJECT DETAILS & INFORMATION
+Display relevant project information elegantly:
+- Project Name
+- Wedding / Event Type
+- Location
+- Photography or Film Category
+- Project Description
+- Project Gallery
+
+Only display fields that exist in the project data.
+
+## 8. LOAD MORE / PAGINATION
+- Implement elegant Load More functionality or pagination.
+- Reveal additional projects using staggered cinematic animations.
+- Avoid loading every large image immediately.
+- Preserve category filters during pagination.
+- Maintain smooth scrolling after loading new projects.
+
+## 9. FINAL CINEMATIC CTA
+Create a premium closing section:
+
+"YOUR STORY DESERVES TO BE A MASTERPIECE"
+
+Subtitle:
+"Let's create something unforgettable together."
+
+- Cinematic background image or video.
+- Dramatic typography reveal.
+- Slow background zoom.
+- Elegant animated Contact Us button.
+- Seamless transition into the footer.
+
+## 10. ADVANCED ANIMATION TECHNOLOGY
+
+Use:
+- GSAP
+- ScrollTrigger
+- SplitType or equivalent text-splitting solution
+- CSS 3D transforms
+- Image masking and clipping
+- Parallax scrolling
+- Scroll-linked timelines
+
+Every section should have a unique animation identity. Avoid repeating identical effects everywhere.
+
+## 11. PERFORMANCE & RESPONSIVENESS
+- Fully responsive desktop, tablet, and mobile.
+- Optimized image formats such as WebP or AVIF.
+- Lazy loading for gallery images.
+- Use GPU-friendly transforms.
+- Prevent flickering and layout shifts.
+- Target smooth 60 FPS where hardware permits.
+- Respect prefers-reduced-motion.
+- Maintain accessibility and SEO-friendly project content.
+
+## 12. DEVELOPMENT INSTRUCTIONS
+Before coding:
+1. Analyze the existing Our Projects page.
+2. Inspect project database, models, APIs, and image storage.
+3. Understand existing project categories and routes.
+4. Reuse existing project images and videos.
+5. Preserve existing project data and functionality.
+6. Implement the design directly into the existing project.
+7. Test category filters, project details, navigation, and animations.
+8. Verify desktop and mobile performance.
+
+IMPORTANT:
+- Do not create fake projects.
+- Do not invent project statistics.
+- Do not replace genuine images with random stock photos.
+- Do not break existing routes or backend functionality.
+- Do not create a separate demo page.
+
+## FINAL EXPECTATION
+
+Create an award-winning luxury wedding photography portfolio experience.
+
+The Our Projects page should feel like a cinematic film gallery with:
+- Immersive project presentations.
+- Premium editorial masonry layouts.
+- Cinematic image reveals.
+- Sophisticated 3D hover effects.
+- Smooth horizontal project movement.
+- Interactive category filtering.
+- Beautiful project detail experiences.
+- Elegant cinematic transitions.
+
+The final result must be original, premium, artistic, responsive, and production-ready.

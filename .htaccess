@@ -1,0 +1,34 @@
+# Zero-Trust Security: Block directory browsing
+Options -Indexes
+
+# Block sensitive files and folders
+<FilesMatch "(^\..*|\.(env|git|sql|bak|log|ini|yml|yaml|sh|bat))$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block direct folder access to sensitive directories
+    RewriteRule ^(?:config|database|docs)(?:/|$) - [F,L,NC]
+
+    # Serve existing files and directories directly without rewriting
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Admin Portal Direct Routing
+    RewriteRule ^admin(?:/.*)?$ admin/index.php [L,NC]
+
+    # Public Clean URLs: domain/module/file -> front/index.php?module=$1&file=$2
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond $1 !^(admin|front|uploads|config|database|docs)
+    RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ front/index.php?module=$1&file=$2 [L,QSA]
+
+    # Public Clean URLs: domain/page -> front/index.php?module=$1
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond $1 !^(admin|front|uploads|config|database|docs)
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ front/index.php?module=$1 [L,QSA]
+</IfModule>

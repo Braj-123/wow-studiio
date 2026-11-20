@@ -1,4 +1,10 @@
+# Ignore temporary and cache files
 scratch/
 *.log
 .DS_Store
 Thumbs.db
+
+# Exclude files exceeding GitHub's 100MB hard limit
+uploads/IMG_1035.mp4
+uploads/photo store/IMG_1035.MP4
+*IMG_1035*

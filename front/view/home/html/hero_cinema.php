@@ -318,6 +318,7 @@ $appBasePath = $appBasePath ?? '';
                playsinline 
                preload="auto"
                poster="<?= $appBasePath ?>/uploads/photo store/2.jpeg">
+            <source src="<?= $appBasePath ?>/uploads/hero_cinema.mp4" type="video/mp4">
             <source src="<?= $appBasePath ?>/uploads/IMG_1035.mp4" type="video/mp4">
             <source src="<?= $appBasePath ?>/uploads/photo%20store/IMG_1035.MP4" type="video/mp4">
         </video>
@@ -463,11 +464,10 @@ $appBasePath = $appBasePath ?? '';
             }
         });
 
-        // Background Camera Push-in (Subtle, realistic motion without excessive zoom)
+        // Background Camera Push-in (Hardware accelerated transform only - no filter repainting)
         heroTimeline.to(video, {
             scale: 1.05,
             yPercent: 4,
-            filter: 'brightness(0.76) contrast(1.12) saturate(1.2)',
             ease: 'none'
         }, 0);
 
@@ -488,6 +488,20 @@ $appBasePath = $appBasePath ?? '';
                 ease: 'power2.in'
             }, 0);
         }
+    }
+
+    // Performance Optimization: Pause video playback when off-screen to guarantee silky 60fps scrolling
+    if ('IntersectionObserver' in window && heroSection && video) {
+        const heroVisibilityObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    video.play().catch(function(){});
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.05 });
+        heroVisibilityObserver.observe(heroSection);
     }
 
     if (document.readyState === 'loading') {

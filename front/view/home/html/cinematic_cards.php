@@ -668,10 +668,15 @@ $cinematicCards = [
         let prevAngle = 0;
         let isHovered = false;
         let animationFrameId = null;
+        let isSectionVisible = true;
 
         const anglePerCard = 360 / totalCards; // 45 degrees per card
 
         function updateCards3D() {
+            if (!isSectionVisible) {
+                animationFrameId = null;
+                return;
+            }
             const stageWidth = viewport.clientWidth;
             // Radius dynamically scales with viewport width so arc fits beautifully:
             // Desktop: 680px - 760px; Tablet: 520px; Mobile: 360px
@@ -825,6 +830,19 @@ $cinematicCards = [
                 targetAngle -= anglePerCard;
             }
         }, 4800);
+
+        // Performance: Pause 3D animation loop when section is scrolled out of viewport
+        if ('IntersectionObserver' in window && viewport) {
+            const cardsVisibilityObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    isSectionVisible = entry.isIntersecting;
+                    if (isSectionVisible && !animationFrameId) {
+                        animationFrameId = requestAnimationFrame(updateCards3D);
+                    }
+                });
+            }, { threshold: 0.05 });
+            cardsVisibilityObserver.observe(viewport);
+        }
 
         // Start 3D round loop
         updateCards3D();

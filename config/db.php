@@ -13,10 +13,11 @@ class Database
     public static function connect(): PDO
     {
         if (self::$instance === null) {
-            $host = '127.0.0.1';
-            $dbname = 'wedding_db';
-            $user = 'root';
-            $pass = '';
+            $host = getenv('DB_HOST') ?: '127.0.0.1';
+            $dbname = getenv('DB_DATABASE') ?: 'wedding_db';
+            $user = getenv('DB_USERNAME') ?: 'root';
+            $defaultPass = (PHP_OS_FAMILY === 'Linux') ? 'Mpp@Db2026Secure!' : '';
+            $pass = getenv('DB_PASSWORD') !== false ? (string)getenv('DB_PASSWORD') : $defaultPass;
             $charset = 'utf8mb4';
 
             $dsn = "mysql:host={$host};dbname={$dbname};charset={$charset}";
